@@ -5,9 +5,6 @@ import pygame
 
 exit = Event()
 
-pygame.mixer.init()
-pygame.mixer.music.load('Maj5_ascending.mp3')
-
 
 def main():
     print('chime.py - Play an alert every X seconds')
@@ -17,6 +14,9 @@ def main():
     except ValueError as e:
         print(f'Could not interpret input: {e}')
         exit.set()
+
+    pygame.mixer.init()
+    pygame.mixer.music.load('Maj5_ascending.mp3')
 
     while not exit.is_set():
         pygame.mixer.music.play()
